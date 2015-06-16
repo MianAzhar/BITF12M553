@@ -46,7 +46,7 @@
 
         <div class="form-group form-inline">
             Select Date: <input type="date" class="alert-success form-control" name="date" required />
-            <input type="text" id="datepicker">
+            
             <input type="hidden" name="courseId" value="@ViewBag.courseId" />
         </div>
 
@@ -63,7 +63,7 @@
                     {
                         foreach (var atend in obj.Attendance)
                         {
-                            <th>@atend.Date.ToString("d") <br /> @Html.ActionLink("Edit", "EditAttendance", new { courseId = ViewBag.courseId , date = atend.Date})</th>
+                            <th>@atend.Date.ToString("d") <br /> @Html.ActionLink("Edit", "EditAttendance", new { courseId = ViewBag.courseId , date = atend.Date}) | @Html.ActionLink("Del", "DeleteAttendance", new { courseId = ViewBag.courseId, date = atend.Date })</th>
                         }
                         break;
                     }

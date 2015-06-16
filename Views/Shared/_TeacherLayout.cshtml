@@ -94,7 +94,8 @@
                             @{
                                 CMSEntities db = new CMSEntities();
                                 int teacherId = (int)Session["teacherId"];
-                                IEnumerable cources = db.Teaches.Where(x => x.TeacherId == teacherId);
+                                //IEnumerable cources = db.Teaches.Where(x => x.TeacherId == teacherId);
+                                var cources = db.Teaches.Where(x => x.TeacherId == teacherId).ToList();
                             }
 
                             @foreach(Teach t in cources)
